@@ -2,15 +2,12 @@ from flask import Flask, render_template, request
 import joblib
 import os
 
-model = joblib.load(os.path.join("Models", "fake_news_model.pkl"))
-
-
 # Initialize Flask app
 app = Flask(__name__)
 
-# Load trained model and vectorizer
-model = joblib.load(r"D:\Practice+Learning\Fake_news App\Models\fake_news_model.pkl")
-vectorizer = joblib.load(r"D:\Practice+Learning\Fake_news App\Models\tfidf_vectorizer.pkl")
+# Load trained model and vectorizer using relative paths
+model = joblib.load(os.path.join("Models", "fake_news_model.pkl"))
+vectorizer = joblib.load(os.path.join("Models", "tfidf_vectorizer.pkl"))
 
 @app.route('/')
 def home():
@@ -26,7 +23,6 @@ def predict():
 
         label = "🔴 FAKE NEWS" if prediction == 0 else "🟢 REAL NEWS"
         return render_template('result.html', prediction=label, input_text=news_text)
-
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 7860))
