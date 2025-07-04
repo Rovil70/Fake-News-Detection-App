@@ -27,5 +27,7 @@ def predict():
         label = "🔴 FAKE NEWS" if prediction == 0 else "🟢 REAL NEWS"
         return render_template('result.html', prediction=label, input_text=news_text)
 
-if __name__ == '__main__':
-    app.run(debug=True)
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 7860))
+    app.run(host="0.0.0.0", port=port)
