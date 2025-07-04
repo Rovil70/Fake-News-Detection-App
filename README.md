@@ -8,7 +8,7 @@ A machine learning web application that classifies whether a news article is **F
 ## 🚀 Demo
 
 🔗 **Live App** 
-
+https://fake-news-detection-app-u6nr.onrender.com
 ---
 
 ## 🧠 Models Used
