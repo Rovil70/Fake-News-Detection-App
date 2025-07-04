@@ -1,5 +1,9 @@
 from flask import Flask, render_template, request
 import joblib
+import os
+
+model = joblib.load(os.path.join("Models", "fake_news_model.pkl"))
+
 
 # Initialize Flask app
 app = Flask(__name__)
