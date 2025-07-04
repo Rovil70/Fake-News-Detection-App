@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f9fc;
+            text-align: center;
+            padding: 50px;
+        }
+        .result {
+            font-size: 24px;
+            font-weight: bold;
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .real {
+            color: green;
+        }
+        .fake {
+            color: red;
+        }
+        .back-btn {
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            border: none;
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔎 Prediction Result</h1>
+    <p class="result {{ 'real' if prediction == '🟢 REAL NEWS' else 'fake' }}">{{ prediction }}</p>
+
+    <div>
+        <h3>📝 Input Text:</h3>
+        <p>{{ input_text }}</p>
+    </div>
+
+    <a href="/" class="back-btn">Try Another</a>
+</body>
+</html>
